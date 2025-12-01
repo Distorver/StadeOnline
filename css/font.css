@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "myFirstFont";
+  src: url("../assets/fonts/SCHABO-Condensed.otf");
+}
+
+.schabo {
+  font-family: "myFirstFont";
+}
