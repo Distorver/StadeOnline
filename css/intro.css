@@ -1,0 +1,66 @@
+.intro {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  position: absolute;
+  color: #73836f;
+  width: 3rem;
+  left: 7rem;
+  top: 10rem;
+}
+
+.note {
+  position: absolute;
+  color: #73836f;
+  text-transform: none;
+  font-family: 'Road Rage', sans-serif;
+  top: 11rem;
+  left: 11rem;
+  transform: rotate(-8deg);
+  font-size: 2rem;
+  writing-mode: vertical-lr;
+  font-weight: 300;
+}
+
+.football {
+  z-index: 0;
+  position: absolute;
+  width: 30%;
+  right: 6rem;
+  top: 33rem;
+  opacity: 80%;
+}
+
+.big {
+  font-size: 20rem;
+}
+
+.mid {
+  writing-mode: vertical-rl;
+  font-size: 2.7rem;
+  margin-left: 1rem;
+  color: #00cf78;
+  font-weight: 400;
+}
+
+.sm {
+  font-size: 9.9rem;
+}
+
+.intro h1 {
+  z-index: 1;
+  justify-self: center;
+  display: inline-block;
+  line-height: 0.8;
+  align-self: center;
+  color: #ceeec6;
+}
+
+.league {
+  height: 100vh;
+}

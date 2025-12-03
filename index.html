@@ -7,6 +7,8 @@
     <title>StadeOnline</title>
 
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/sideNav.css" />
+    <link rel="stylesheet" href="css/intro.css" />
     <link rel="stylesheet" href="css/font.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,41 +17,48 @@
       href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Mogra&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Mogra&family=Road+Rage&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <!-- schabo class to use the font -->
+
+  <!-- this class to use schabo font -->
   <body class="schabo">
+    <!-- NAV SECTION -->
     <nav>
       <a class="nav-logo" href="#">Stade<br /><span>Online</span></a>
 
       <!-- nav list -->
       <ul class="nav-list">
         <li>
-          <div class="nav-btn">
-            <a href="#intro">Intro</a>
+          <a class="nav-btn" href="#intro">
+            <span>Intro</span>
             <ion-icon class="nav-icn" name="arrow-forward-outline"></ion-icon>
-          </div>
+          </a>
+          <div class="nav-border"></div>
+        </li>
+
+        <li>
+          <a class="nav-btn" href="#league">
+            <span>League</span>
+            <ion-icon class="nav-icn" name="arrow-forward-outline"></ion-icon>
+          </a>
 
           <div class="nav-border"></div>
         </li>
 
         <li>
-          <div class="nav-btn">
-            <a href="#league">League</a>
+          <a class="nav-btn" href="#team">
+            <span>Team</span>
             <ion-icon class="nav-icn" name="arrow-forward-outline"></ion-icon>
-          </div>
-
-          <div class="nav-border"></div>
-        </li>
-
-        <li>
-          <div class="nav-btn">
-            <a href="#team">Team</a>
-            <ion-icon class="nav-icn" name="arrow-forward-outline"></ion-icon>
-          </div>
+          </a>
         </li>
       </ul>
 
-      <!-- github link -->
+      <!-- GITHUB LINK -->
       <a
         class="github"
         target="_blank"
@@ -58,13 +67,44 @@
         repo</a
       >
 
-      <!-- nav footer -->
+      <!-- NAV FOOTER -->
       <footer class="nav-footer">
         <p>Copyright &copy; Stade Online 2025</p>
       </footer>
     </nav>
 
-    <!-- to use icon pack -->
+    <!-- MAIN SECTION -->
+    <main class="schabo">
+      <header id="intro" class="intro">
+        <svg
+          width="100%"
+          viewBox="0 0 62 270"
+          fill="none"
+          data-draw-arrow=""
+          class="arrow"
+          style=""
+        >
+          <path
+            d="M3.17994 269.213C0.163299 268.413 -0.774352 265.024 0.700402 262.405C2.64055 257.6 4.0929 252.568 5.43771 247.501C8.43689 237.408 10.4996 226.969 13.2206 216.78C13.1701 216.453 13.3604 216.121 13.6698 216.06C15.9543 215.648 15.0742 222.705 15.0953 224.294C14.3918 231.713 13.0413 239.02 11.3533 246.215C25.8047 221.385 38.7823 195.219 45.6934 166.344C57.6079 116.264 54.9706 52.6602 42.5083 1.45593C42.1873 1.17807 42.1139 0.516673 42.6252 0.361453C44.0611 0.0729827 45.1748 2.30194 45.8549 3.44266C61.1392 36.9132 62.8042 85.9195 61.2384 121.985C60.0565 152.378 54.1296 182.436 41.9537 209.303C34.7209 224.804 26.2341 239.532 17.1979 253.811C23.5803 250.063 30.0724 246.517 36.7895 243.452C41.0512 241.756 44.135 248.575 40.1837 250.914C36.9895 252.628 33.8306 254.418 30.7628 256.368C24.9805 259.913 9.46719 270.85 3.17066 269.202L3.17994 269.213Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+
+        <p class="note">Navigate here</p>
+
+        <h1>
+          <span class="big">Follow</span
+          ><span class="mid">your favourite team </span><br />
+          <span class="sm">all in one place</span>
+        </h1>
+
+        <img class="football" src="assets/images/football.png" alt="football" />
+      </header>
+
+      <div id="league" class="league"></div>
+    </main>
+
+    <!-- to use ion icon pack https://ionic.io/ionicons -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
