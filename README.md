@@ -20,8 +20,8 @@
 
 ## 1- Welcome page
 
-Leave it to me.
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlhjWLurizaDhrdGx5EdjMgvulc4F6km5LVg&s)
+Leave it to me.
 
 ## 2- Home page
 
