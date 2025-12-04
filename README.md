@@ -2,11 +2,11 @@
 
 # TODO
 
-- [ ] Welcome page
-  - [x] ~~Side Nav~~
-  - [x] ~~Intro~~
-  - [ ] League
-  - [ ] Team
+- [ ] Welcome page __Ali Ayman__ 
+  - [x] ~~Side Nav~~ __Ali Ayman__ 
+  - [x] ~~Intro~~ __Ali Ayman__ 
+  - [ ] League __Ali Ayman__ 
+  - [ ] Team __Ali Ayman__ 
 - [ ] Home Page
   - [ ] Nav Bar
   - [ ] Main Section
