@@ -7,8 +7,8 @@
   - [x] ~~Intro~~ __(Ali Ayman)__ 
   - [ ] League __(Ali Ayman)__ 
   - [ ] Team __(Ali Ayman)__ 
-- [ ] Home Page
-  - [ ] Nav Bar
+- [x] Home Page__(Ali mohamed)__ 
+  - [x] Nav Bar__(Ali mohamed)__ 
   - [ ] Main Section
     - [ ] Table Section
     - [ ] Matches Section
