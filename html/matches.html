@@ -1,1 +1,51 @@
-<!-- don't forget to comment your code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Schedule | Clean Final UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav-bar simplified-nav">
+        <div class="nav-brand">PREMIER LEAGUE</div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link-item">Home</a></li>
+            <li><a href="#" class="nav-link-item active">Matches</a></li>
+            <li><a href="#" class="nav-link-item">Table</a></li>
+        </ul>
+    </nav>
+    
+    <main class="main-content clean-matches-layout">
+        
+        <section class="schedule-container final-layout">
+            
+            <h1 class="page-header">Premier League Match Schedule</h1>
+            
+            <div class="main-schedule-widget optimized-size">
+                
+                <div class="matchweek-navigation">
+                    <button id="prev-matchweek" class="nav-arrow-btn disabled" title="Previous Matchweek">&#xab;</button> 
+                    
+                    <div class="matchweek-info">
+                        <span class="matchweek-title" id="current-matchweek-title">Matchweek 1</span>
+                        <span class="matchweek-dates" id="current-matchweek-dates">Week 1 of 38</span>
+                    </div>
+                    
+                    <button id="next-matchweek" class="nav-arrow-btn" title="Next Matchweek">&#xbb;</button> 
+                </div>
+                
+                <div id="detailed-schedule-container" class="api-placeholder-detailed">
+                    <p>API WAITING: Full Match Schedule for Matchweek 1</p>
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <script src="matches.js"></script>
+</body>
+</html><!-- don't forget to comment your code -->
