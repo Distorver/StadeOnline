@@ -1,0 +1,57 @@
+.league {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  color: #ceeec6;
+}
+
+.league span {
+  color: #00cf78;
+}
+
+.league h2,
+.icn {
+  font-size: 5rem;
+}
+
+.icn {
+  z-index: 1;
+  cursor: pointer;
+}
+
+.league p {
+  font-size: 3rem;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-section {
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+  width: 70rem;
+  transition: 0.3s all;
+}
+
+.card img {
+  width: 12rem;
+  opacity: 30%;
+  z-index: 0;
+}
+
+.active img {
+  width: 25rem;
+  opacity: 100%;
+}

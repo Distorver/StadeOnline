@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/sideNav.css" />
     <link rel="stylesheet" href="css/intro.css" />
+    <link rel="stylesheet" href="css/slider.css" />
     <link rel="stylesheet" href="css/font.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,7 +77,7 @@
     <!-- MAIN SECTION -->
     <main class="schabo">
       <!-- INTRO SECTION -->
-      <header id="intro" class="intro">
+      <section id="intro" class="intro">
         <svg
           width="100%"
           viewBox="0 0 62 270"
@@ -99,11 +100,32 @@
         </h1>
 
         <img class="football" src="assets/images/football.png" alt="football" />
-      </header>
+      </section>
 
       <!-- LEAGUE SECTION -->
-      <div id="league" class="league"></div>
+      <div id="league" class="league">
+        <h2>Choose your <span>league</span></h2>
+        <div class="slider">
+          <ion-icon name="chevron-back-outline" class="icn left"></ion-icon>
+          <div class="slide">
+            <div class="card-1 card">
+              <img src="assets/images/barca.png" alt="" />
+            </div>
+            <div class="card0 card active">
+              <img src="assets/images/milan.png" alt="" />
+            </div>
+
+            <div class="card1 card">
+              <img src="assets/images/madrid.png" alt="" />
+            </div>
+          </div>
+          <ion-icon name="chevron-forward-outline" class="icn right"></ion-icon>
+        </div>
+        <p class="selected">Selected League</p>
+      </div>
     </main>
+
+    <script src="js/main.js"></script>
 
     <!-- to use ion icon pack https://ionic.io/ionicons -->
     <script
