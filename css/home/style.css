@@ -1,1 +1,89 @@
-/* dont't forget to comment your code */
+/* --- GLOBAL STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e; /* Dark background */
+    color: #ffffff;
+}
+
+
+/* --- NAVBAR STYLES --- */
+.navbar {
+    background-color: #0f0f1a;
+    display: flex; 
+    justify-content: flex-start; /* Aligned left */
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    gap: 50px; 
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    color: #4CAF50; /* Logo color */
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item {
+    color: #ffffff; /* Link color */
+    text-decoration: none; 
+    font-size: 1.1rem;
+    padding: 5px 10px;
+}
+
+
+/* --- MAIN CONTENT LAYOUT --- */
+.main-content {
+    padding: 40px;
+    max-width: 1600px; /* Wide screen */
+    margin: 30px auto; /* Center content */
+}
+
+/* 3-column container */
+.cards-container {
+    display: flex; 
+    gap: 25px;
+    align-items: stretch; 
+}
+
+/* Base style for cards */
+.card {
+    flex: 1; /* Equal width */
+    height: 800px; /* Tall size */
+    
+    border-radius: 10px;
+    padding: 30px; 
+    display: block; 
+    text-align: left;
+    
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border: 3px solid #3d3d5c; 
+    background-color: #000000; /* Black background */
+}
+
+/* Loading message style */
+.wait-message {
+    font-size: 1.5rem;
+    color: #999999; 
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Ensure content containers inside cards are scrollable */
+#league-table-container,
+#matches-schedule-container,
+#match-overview-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; 
+}/* dont't forget to comment your code */
