@@ -1,272 +1,82 @@
-/* --- Global Styles & Variables --- */
-:root {
-    --bg-dark: #120A1A; 
-    --card-bg-blur: rgba(47, 36, 58, 0.75); 
-    --primary-color: #9C27B0; 
-    --primary-glow: rgba(156, 39, 176, 0.7); 
-    --text-light: #E0E0E0;
-    --text-muted: #BDBDBD;
-    --nav-bg: #1A1220;
-    --live-red: #E53935; 
-    --glow-light: #E1BEE7; 
-}
-
-/* Reset and Typography */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    line-height: 1.6;
-    direction: ltr;
+    font-family: Arial, sans-serif;
+    background: #1f202e;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-a:hover {
-    color: #ce57e3;
-}
-
-/* --- Navigation Bar (Simplified) --- */
-.nav-bar {
-    background-color: var(--nav-bg);
-    padding: 15px 50px;
+/* Navbar */
+.navbar {
+    background-color: #1f202e;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 15px 50px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    gap: 50px;
 }
 
 .nav-brand {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-right: 40px;
+    color: #4CAF50;
+    font-weight: bold;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 20px;
-}
-
-.nav-link-item {
-    color: var(--text-muted);
-    font-size: 1rem;
-    padding: 10px 0;
-    position: relative;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-link-item:hover {
-    color: var(--text-light);
-}
-
-.nav-link-item.active {
-    color: var(--text-light);
-}
-
-.nav-link-item.active::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-color);
-}
-
-/* --- Main Content Layout (Clean & Centered) --- */
-.main-content {
-    display: flex;
-    justify-content: center;
-    padding: 30px 20px;
-}
-
-.schedule-container {
-    width: 100%;
-    max-width: 950px; 
-    display: flex;
-    flex-direction: column;
     gap: 25px;
 }
 
-/* --- GLOW ANIMATION DEFINITION: SCAN PULSE EFFECT --- */
-@keyframes scan-pulse {
-    /* Start: Scan light invisible off-screen left */
-    0% {
-        transform: translateX(-100%);
-        box-shadow: 0 0 0 transparent;
-    }
-    
-    /* Center: Scan light maximum brightness */
-    50% {
-        transform: translateX(100%);
-        box-shadow: 0 0 10px var(--glow-light), 0 0 20px var(--primary-color);
-    }
-    
-    /* End: Scan light invisible off-screen right */
-    100% {
-        transform: translateX(-100%);
-        box-shadow: 0 0 0 transparent;
-    }
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.2s;
 }
 
-/* --- PAGE HEADER WITH ANIMATED GLOW LINE CONTAINER --- */
-.page-header {
-    font-size: 2.2rem;
-    color: white; 
-    padding-bottom: 10px;
-    position: relative;
-    overflow: hidden; /* Crucial for hiding the moving glow outside the line bounds */
-    z-index: 1;
+.nav-item:hover {
+    color: #4CAF50;
 }
 
-/* Base Line (The static purple line) */
-.page-header::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color);
-    opacity: 0.5; /* Slightly muted base line */
-}
-
-/* Animated Glow Pulse (The moving element) */
-.page-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%; /* Width of the glowing pulse */
-    height: 2px; 
-    background: linear-gradient(to right, transparent, var(--glow-light), transparent);
-    
-    /* Apply the animation */
-    animation: scan-pulse 3s infinite linear;
-}
-
-/* --- MAIN SCHEDULE WIDGET STYLES (Glassmorphism & Glow) --- */
-.main-schedule-widget {
-    background-color: var(--card-bg-blur); 
-    padding: 25px;
-    border-radius: 20px; 
-    
-    backdrop-filter: blur(8px); 
-    -webkit-backdrop-filter: blur(8px); 
-    
-    box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.37), 
-        0 0 15px var(--primary-glow); 
-    
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-}
-
-
-/* --- Matchweek Navigation Styles --- */
-.matchweek-navigation {
+/* Matches container */
+.matches-container {
     display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.no-matches {
+    text-align: center;
+    font-size: 18px;
+    color: #ccc;
+    margin-top: 50px;
+}
+
+/* Each match row */
+.match-row {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    margin-bottom: 20px; 
-    border-bottom: 1px solid rgba(156, 39, 176, 0.3); 
-}
-
-.matchweek-info {
-    display: flex;
+    background-color: #111;
+    padding: 25px 20px 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    position: relative;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex-grow: 1; 
-}
-
-.matchweek-title {
-    font-size: 1.6rem; 
-    font-weight: 700;
-    color: white;
-}
-
-.matchweek-dates {
-    font-size: 1rem; 
-    color: var(--text-muted);
-}
-
-/* --- FINAL BUTTON STYLES (Circle, Glossy, Enhanced Glow) --- */
-.nav-arrow-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    width: 45px; 
-    height: 45px; 
-    border-radius: 50%; 
-    font-size: 1.6rem; 
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s, opacity 0.3s, box-shadow 0.3s;
-    
-    box-shadow: 
-        0 4px 10px rgba(0, 0, 0, 0.5), 
-        0 0 12px var(--primary-glow); 
-    
-    line-height: 1; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 3px; 
-}
-
-.nav-arrow-btn:hover:not(.disabled) {
-    background-color: #ce57e3;
-    transform: scale(1.08); 
-    box-shadow: 
-        0 6px 15px rgba(0, 0, 0, 0.7),
-        0 0 20px var(--primary-glow); 
-}
-
-.nav-arrow-btn.disabled {
-    opacity: 0.4; 
-    cursor: not-allowed;
-    background-color: #453856;
-    box-shadow: none; 
-    transform: none;
-}
-
-/* Placeholder for API Content */
-.api-placeholder-detailed {
-    min-height: 700px; 
-    background-color: rgba(63, 49, 79, 0.5); 
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
-    color: var(--text-muted);
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 30px;
-    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 950px) {
-    .schedule-container {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-    .main-content {
-        padding: 20px 10px;
-    }
-}/* dont't forget to comment your code */
+.match-row:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
