@@ -1,1 +1,153 @@
-/* dont't forget to comment your code */
+body {
+    font-family: Arial, sans-serif;
+    background: #1f202e;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1f202e;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    gap: 50px;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.nav-item:hover {
+    color: #4CAF50;
+}
+
+/* Matches container */
+.matches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.no-matches {
+    text-align: center;
+    font-size: 18px;
+    color: #ccc;
+    margin-top: 50px;
+}
+
+/* Each match row */
+.match-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 25px 20px 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    position: relative;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.match-row:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
+
+/* League label centered */
+.league-label {
+    position: static;
+    background-color: #222;
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto 10px auto;
+}
+
+/* Match content row */
+.match-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Fixed width containers for symmetry */
+.team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 35%;
+}
+
+.team.home {
+    justify-content: flex-end;
+}
+
+.team.away {
+    justify-content: flex-start;
+}
+
+.team img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.team span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Time in the center */
+.match-time {
+    font-weight: bold;
+    font-size: 16px;
+    color: #ccc;
+    width: 30%;
+    text-align: center;
+}
+
+/* Live match highlight */
+.live-match {
+    color: #e74c3c;
+}
+
+/* League colors */
+.Premier-League { color: #1b458f; }
+.La-Liga { color: #c8102e; }
+.Serie-A { color: #0066b1; }
+.Bundesliga { color: #e2001a; }
+.Ligue-1 { color: #004c97; }
+.default-league { color: #ccc; }

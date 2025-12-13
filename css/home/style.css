@@ -1,1 +1,62 @@
-/* dont't forget to comment your code */
+/* --- MAIN CONTENT LAYOUT --- */
+.main-content {
+  margin: 4rem 6rem; /* Center content */
+  height: 80vh;
+}
+
+/* 3-column container */
+.cards-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 3fr;
+  gap: 2rem;
+}
+
+/* Base style for cards */
+.card {
+  height: 75vh; /* Tall size */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  background-color: #00554b; /* Black background */
+  padding: 1rem;
+}
+
+.title {
+  color: #ceeec6;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.footer {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  padding: 2rem 5rem;
+  background-color: #00cf78;
+  color: #00554b;
+}
+
+.footer-ask {
+  color: #ceeec6;
+}
+
+.copy {
+  font-weight: 400;
+  font-size: 1.7rem;
+  align-self: center;
+}
+
+.change {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #00554b;
+  transition: 0.5s all;
+}
+
+.home-link:hover {
+  color: #ceeec6;
+}
