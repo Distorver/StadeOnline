@@ -1,59 +1,68 @@
-const apiKey = "91aa27c5dc3ceb06b69e1090ce3590ba";
-const today = new Date().toISOString().split('T')[0];
+const apiKey = "15b6691031366470e88231cc73951c19";
+const today = new Date().toISOString().split("T")[0];
 
 fetch(`https://v3.football.api-sports.io/fixtures?date=${today}`, {
-    method: "GET",
-    headers: { "x-apisports-key": apiKey }
+  method: "GET",
+  headers: { "x-apisports-key": apiKey },
 })
-.then(res => res.json())
-.then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     const matches = data.response;
     const container = document.getElementById("matches-container");
     container.innerHTML = "";
 
-    if(matches.length === 0){
-        container.innerHTML = `<div class="no-matches">لا توجد مباريات اليوم</div>`;
-        return;
+    if (matches.length === 0) {
+      container.innerHTML =
+        '<div class="no-matches">لا توجد مباريات اليوم</div>';
+      return;
     }
 
-    matches.forEach(match => {
-        const leagueName = match.league.name;
-        const leagueClass = ['Premier-League','La-Liga','Serie-A','Bundesliga','Ligue-1'].includes(match.league.name.replace(/\s+/g,'-')) 
-                            ? match.league.name.replace(/\s+/g,'-') : 'default-league';
+    matches.forEach((match) => {
+      const home = match.teams.home;
+      const away = match.teams.away;
+      const status = match.fixture.status.short;
 
-        const homeTeam = match.teams.home.name;
-        const awayTeam = match.teams.away.name;
-        const homeLogo = match.teams.home.logo;
-        const awayLogo = match.teams.away.logo;
-        const fixtureStatus = match.fixture.status.short;
-        const homeScore = match.goals.home;
-        const awayScore = match.goals.away;
-        const time = new Date(match.fixture.date).toLocaleTimeString('en-GB', { timeZone: 'Africa/Cairo', hour12: false });
-                let vsOrScore = "VS";
-        let liveClass = '';
-        if(fixtureStatus === "FT" || fixtureStatus === "AET" || fixtureStatus === "PEN"){
-            vsOrScore = `${homeScore} - ${awayScore}`;
-        } else if(fixtureStatus === "LIVE"){
-            vsOrScore = `${homeScore} - ${awayScore}`;
-            liveClass = 'live-match';
-        }
+      let score = "VS";
+      let liveClass = "";
 
-        const row = document.createElement('div');
-        row.classList.add('match-row');
+      if (["FT", "AET", "PEN"].includes(status)) {
+        score = `${match.goals.home} - ${match.goals.away}`;
+      } else if (status === "LIVE") {
+        score = `${match.goals.home} - ${match.goals.away}`;
+        liveClass = "live-match";
+      }
 
-        row.innerHTML = `
-            <div class="league-label ${leagueClass}">${leagueName}</div>
-            <div class="match-content">
-                <div class="team home"><span>${homeTeam}</span><img src="${homeLogo}" alt="${homeTeam}"></div>
-                <div class="match-time ${liveClass}">${vsOrScore} / ${time}</div>
-                <div class="team away"><img src="${awayLogo}" alt="${awayTeam}"><span>${awayTeam}</span></div>
-            </div>
-        `;
+      const time = new Date(match.fixture.date).toLocaleTimeString("en-GB", {
+        timeZone: "Africa/Cairo",
+        hour12: false,
+      });
 
-        container.appendChild(row);
+      const row = document.createElement("div");
+      row.className = "match-row";
+
+      row.innerHTML = `
+        <div class="league-label">${match.league.name}</div>
+        <div class="match-content">
+          <div class="team home">
+            <span>${home.name}</span>
+            <img src="${home.logo}" alt="${home.name}">
+          </div>
+
+          <div class="match-time ${liveClass}">
+            ${score} / ${time}
+          </div>
+
+          <div class="team away">
+            <img src="${away.logo}" alt="${away.name}">
+            <span>${away.name}</span>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(row);
     });
-})
-.catch(err => {
-    console.error(err);
-    document.getElementById("matches-container").innerHTML = `<div class="no-matches">حدث خطأ في جلب البيانات</div>`;
-});
+  })
+  .catch(() => {
+    document.getElementById("matches-container").innerHTML =
+      '<div class="no-matches">حدث خطأ في جلب البيانات</div>';
+  });
