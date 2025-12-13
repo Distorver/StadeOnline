@@ -2,24 +2,68 @@
 <html lang="ar">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matches | StadeOnline</title>
+
+    <link rel="stylesheet" href="../css/public/font.css" />
+    <link rel="stylesheet" href="../css/public/nav.css" />
     <link rel="stylesheet" href="../css/matches/style.css" />
   </head>
+
   <body>
-    <header class="navbar">
-      <div class="nav-brand">StadeOnline</div>
+    <!-- Navbar -->
+    <header class="navbar schabo">
+      <a href="home.html" class="nav-brand">StadeOnline</a>
+
       <nav class="nav-links">
-        <a href="home.html" class="nav-item">Home</a>
-        <a href="matches.html" class="nav-item">Matches</a>
-        <a href="table.html" class="nav-item">Table</a>
+        <a href="home.html" class="nav-item link">Home</a>
+        <a href="matches.html" class="nav-item active link">Matches</a>
+        <a href="table.html" class="nav-item link">Table</a>
       </nav>
+
+      <a
+        class="github"
+        target="_blank"
+        href="https://github.com/Distorver/StadeOnline"
+      >
+        <ion-icon class="git-logo" name="logo-github"></ion-icon>
+        Project repo
+      </a>
     </header>
 
-    <br />
-    <div class="matches-container" id="matches-container">
-      <div class="no-matches">جارٍ تحميل المباريات...</div>
-    </div>
+    <!-- Main -->
+    <main class="main-content">
+      <div class="cards-container">
+        <div class="card matches-card">
+          <h2 class="title schabo">MATCHES TODAY</h2>
 
+          <div class="matches-container" id="matches-container">
+            <div class="no-matches">لا توجد مباريات اليوم</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer schabo">
+      <p class="copy">Copyright &copy; Stade Online 2025</p>
+      <div class="change">
+        <p class="footer-ask">Wanna change your mind!?</p>
+        <a class="home-link" href="../index.html">Press here</a>
+      </div>
+    </footer>
+
+    <!-- Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- JS -->
     <script src="../js/matches.js"></script>
   </body>
 </html>
