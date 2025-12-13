@@ -18,6 +18,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   background-color: #00554b; /* Black background */
   padding: 1rem;
+  overflow: scroll;
 }
 
 .title {

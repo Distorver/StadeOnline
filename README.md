@@ -5,16 +5,16 @@
 - [ ] Welcome page __(Ali Ayman)__ 
   - [x] ~~Side Nav~~ __(Ali Ayman)__ 
   - [x] ~~Intro~~ __(Ali Ayman)__ 
-  - [ ] League __(Ali Ayman)__ 
-  - [ ] Team __(Ali Ayman)__ 
+  - [ ] League __(Ali Ayman "On hold")__ 
+  - [ ] Team __(Ali Ayman "On hold")__ 
 - [ ] Home Page
-  - [ ] Nav Bar
-  - [ ] Main Section
-    - [ ] Table Section
-    - [ ] Matches Section
-    - [ ] Game Section
-- [ ] Matches Page
-- [ ] Table Page
+  - [x] Nav Bar __(Ali Mohamed)__
+  - [x] Main Section __(Ali Mohamed)__
+    - [ ] Table Section __(Ali Mohamed "missing widget")__
+    - [ ] Matches Section __(Ali Mohamed "missing widget")__
+    - [ ] Game Section __(Ali Mohamed "missing widget")__
+- [ ] Matches Page __(Anas "missing widget and style")__
+- [ ] Table Page __(Yousef "On hold")__
 
 # Guide
 
