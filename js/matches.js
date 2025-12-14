@@ -1,19 +1,18 @@
-const apiKey = "15b6691031366470e88231cc73951c19";
-const today = new Date().toISOString().split("T")[0];
+const apiKey = '15b6691031366470e88231cc73951c19';
+const today = new Date().toISOString().split('T')[0];
 
 fetch(`https://v3.football.api-sports.io/fixtures?date=${today}`, {
-  method: "GET",
-  headers: { "x-apisports-key": apiKey },
+  method: 'GET',
+  headers: { 'x-apisports-key': apiKey },
 })
   .then((res) => res.json())
   .then((data) => {
     const matches = data.response;
-    const container = document.getElementById("matches-container");
-    container.innerHTML = "";
+    const container = document.getElementById('matches-container');
+    container.innerHTML = '';
 
     if (matches.length === 0) {
-      container.innerHTML =
-        '<div class="no-matches">لا توجد مباريات اليوم</div>';
+      container.innerHTML = '<div class="no-matches">No Matches today</div>';
       return;
     }
 
@@ -22,39 +21,39 @@ fetch(`https://v3.football.api-sports.io/fixtures?date=${today}`, {
       const away = match.teams.away;
       const status = match.fixture.status.short;
 
-      let score = "VS";
-      let liveClass = "";
+      let score = 'VS';
+      let liveClass = '';
 
-      if (["FT", "AET", "PEN"].includes(status)) {
+      if (['FT', 'AET', 'PEN'].includes(status)) {
         score = `${match.goals.home} - ${match.goals.away}`;
-      } else if (status === "LIVE") {
+      } else if (status === 'LIVE') {
         score = `${match.goals.home} - ${match.goals.away}`;
-        liveClass = "live-match";
+        liveClass = 'live-match';
       }
 
-      const time = new Date(match.fixture.date).toLocaleTimeString("en-GB", {
-        timeZone: "Africa/Cairo",
-        hour12: false,
+      const time = new Date(match.fixture.date).toLocaleTimeString('en-GB', {
+        timeZone: 'Africa/Cairo',
+        hour12: true,
       });
 
-      const row = document.createElement("div");
-      row.className = "match-row";
+      const row = document.createElement('div');
+      row.className = 'match-row';
 
       row.innerHTML = `
-        <div class="league-label">${match.league.name}</div>
         <div class="match-content">
-          <div class="team home">
-            <span>${home.name}</span>
+          <div class="team home schabo">
+            <p>${home.name}</p>
             <img src="${home.logo}" alt="${home.name}">
           </div>
 
-          <div class="match-time ${liveClass}">
-            ${score} / ${time}
+          <div class="match-time schabo ${liveClass}">
+            <p>${time}</p>
+            <p>${score}</p>
           </div>
 
-          <div class="team away">
+          <div class="team away schabo">
             <img src="${away.logo}" alt="${away.name}">
-            <span>${away.name}</span>
+            <p>${away.name}</p>
           </div>
         </div>
       `;
@@ -63,6 +62,6 @@ fetch(`https://v3.football.api-sports.io/fixtures?date=${today}`, {
     });
   })
   .catch(() => {
-    document.getElementById("matches-container").innerHTML =
-      '<div class="no-matches">حدث خطأ في جلب البيانات</div>';
+    document.getElementById('matches-container').innerHTML =
+      '<div class="no-matches">Error fetching data</div>';
   });
