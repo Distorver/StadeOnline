@@ -48,3 +48,183 @@ main {
     ),
     url(../../assets/images/background.jpg);
 }
+
+/* ===========LEAGUE & TEAM SECTIONS=============*/
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-title {
+  margin-right: 2.2rem;
+  font-size: 6rem;
+  color: #ceeec6;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 45rem;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.slider {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.36s cubic-bezier(0.2, 0.9, 0.3, 1);
+  align-items: center;
+}
+
+.slider-btn {
+  background: rgba(0, 207, 120, 0.2);
+  border: 2px solid #00cf78;
+  color: #00cf78;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  font-size: 2rem;
+}
+
+.slider-btn:hover {
+  background: rgba(0, 207, 120, 0.4);
+  box-shadow: 0 0 15px rgba(0, 207, 120, 0.5);
+  transform: scale(1.1);
+}
+
+.slider-btn:active {
+  transform: scale(0.95);
+}
+
+.slider-btn ion-icon {
+  pointer-events: none;
+}
+
+.slider-item {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.28s, opacity 0.2s, box-shadow 0.2s;
+  opacity: 0.7;
+  transform: scale(0.85);
+  user-select: none;
+}
+
+.slider-item:hover {
+  opacity: 0.9;
+}
+
+.slider-item.active {
+  opacity: 1;
+  transform: scale(1.14);
+  box-shadow: 0 8px 22px rgba(18, 22, 50, 0.12);
+}
+
+.slider-item-logo {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.slider-item.active .slider-item-logo {
+  background: rgba(0, 207, 120, 0.3);
+  border: 3px solid #00cf78;
+  box-shadow: 0 0 20px rgba(0, 207, 120, 0.5);
+}
+
+.slider-item-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+.slider-item-name {
+  font-size: 1.2rem;
+  color: #ceeec6;
+  text-align: center;
+  font-weight: 400;
+}
+
+.slider-item.active .slider-item-name {
+  color: #00cf78;
+  font-weight: 600;
+}
+
+/* === CTA BUTTON === */
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-button {
+  margin-top: 10rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #00554b;
+  text-decoration: none;
+  margin-left: auto;
+  background-color: #ceeec6;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 8px;
+  transition: 0.5s all;
+}
+
+.cta-button:hover {
+  color: #ceeec6;
+  background-color: #00554b;
+  translate: 0 -0.5rem;
+}
+
+.cta-button ion-icon {
+  font-size: 2rem;
+}

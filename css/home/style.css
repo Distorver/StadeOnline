@@ -61,3 +61,323 @@
 .home-link:hover {
   color: #ceeec6;
 }
+
+/* --- WIDGET STYLING --- */
+
+.widget-header {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #00cf78;
+  margin-bottom: 1.5rem;
+}
+
+.widget-header h3 {
+  margin: 0;
+  color: #00cf78;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Loading and error states */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #ceeec6;
+  font-size: 1.1rem;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #ff6b6b;
+  font-size: 1.1rem;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #8a9e9e;
+  font-size: 1.1rem;
+}
+
+/* --- LEAGUE TABLE STYLING --- */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table thead {
+  background-color: rgba(0, 207, 120, 0.15);
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  color: #00cf78;
+  font-weight: 600;
+  border-bottom: 2px solid #00cf78;
+  font-size: 0.95rem;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 207, 120, 0.2);
+  color: #ceeec6;
+  font-size: 0.95rem;
+}
+
+.table tr:hover {
+  background-color: rgba(0, 207, 120, 0.1);
+}
+
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.team-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.team-name {
+  color: #00cf78;
+  font-weight: 500;
+}
+
+.points {
+  color: #00cf78;
+  font-size: 1.1rem;
+}
+
+.table tr.highlight-champ {
+  background-color: rgba(0, 207, 120, 0.2);
+  border-left: 4px solid #00cf78;
+}
+
+.table tr.highlight-relegated {
+  background-color: rgba(255, 107, 107, 0.1);
+  border-left: 4px solid #ff6b6b;
+}
+
+/* --- MATCHES LIST STYLING --- */
+
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.match-card {
+  background-color: rgba(0, 207, 120, 0.08);
+  border-left: 4px solid #00cf78;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.match-card:hover {
+  background-color: rgba(0, 207, 120, 0.15);
+  transform: translateX(5px);
+}
+
+.match-card.finished {
+  border-left-color: #00cf78;
+}
+
+.match-card.postponed {
+  border-left-color: #ff6b6b;
+  opacity: 0.7;
+}
+
+.match-date {
+  color: #8a9e9e;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.match-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.team {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.team.away {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.team-badge {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.team .team-name {
+  color: #ceeec6;
+  font-weight: 500;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #00cf78;
+  min-width: 60px;
+  justify-content: center;
+}
+
+.match-score .separator {
+  color: #8a9e9e;
+}
+
+.match-status {
+  color: #8a9e9e;
+  font-size: 0.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* --- LAST MATCH STYLING --- */
+
+.last-match-container {
+  margin-top: 1.5rem;
+}
+
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 207, 120, 0.1);
+  border-radius: 8px;
+}
+
+.team-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.team-section.away {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.team-badge {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.team-info h4 {
+  margin: 0;
+  color: #00cf78;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.match-score-large {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00cf78;
+  white-space: nowrap;
+}
+
+.score-number {
+  color: #00cf78;
+  min-width: 60px;
+  text-align: center;
+}
+
+.score-separator {
+  color: #8a9e9e;
+  font-size: 1.5rem;
+}
+
+.match-details {
+  background-color: rgba(0, 207, 120, 0.08);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 207, 120, 0.2);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item .label {
+  color: #8a9e9e;
+  font-weight: 600;
+}
+
+.detail-item .value {
+  color: #ceeec6;
+}
+
+.match-stats {
+  background-color: rgba(0, 207, 120, 0.08);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(0, 207, 120, 0.05);
+  border-radius: 6px;
+}
+
+.stat-home,
+.stat-away {
+  text-align: center;
+  color: #00cf78;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  text-align: center;
+  color: #8a9e9e;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}

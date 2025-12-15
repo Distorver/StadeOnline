@@ -20,16 +20,13 @@ a:visited {
 .nav-logo {
   display: inline-block;
   font-size: 5rem;
+  line-height: 0.9;
   margin-bottom: 4rem;
 }
 
 .nav-logo span {
   text-shadow: 0 5px 10px #00554b;
   color: #00cf78;
-}
-
-.nav-logo:hover {
-  animation: wiggle 2s infinite;
 }
 
 .nav-btn {
@@ -88,15 +85,38 @@ li {
   padding: 0.5rem 1.5rem;
   border-radius: 0.6rem;
   margin-top: auto;
+  transition: 0.3s all;
 }
 
 .github:hover,
 .github:active {
-  outline: 2px solid #ceeec6;
+  color: #00554b;
+  background-color: #ceeec6;
+  outline: 4px solid #00554b;
 }
 
 .nav-footer {
   text-transform: none;
   margin-top: auto;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Dim other nav links when hovering one */
+.nav-list {
+  transition: opacity 0.2s ease;
+}
+
+.nav-list:hover .nav-btn {
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.nav-list .nav-btn:hover {
+  opacity: 1;
+}
+
+/* Keep logo and github CTA at full opacity */
+nav > .nav-logo,
+nav .github {
+  opacity: 1 !important;
 }

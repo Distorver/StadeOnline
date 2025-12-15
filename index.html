@@ -102,7 +102,68 @@
       </header>
 
       <!-- LEAGUE SECTION -->
-      <div id="league" class="league"></div>
+      <section id="league" class="league">
+        <div class="section-header">
+          <h2 class="section-title">Select League</h2>
+        </div>
+        <div class="slider-wrapper">
+          <button
+            class="slider-btn prev-btn"
+            id="league-prev"
+            aria-label="Previous league"
+          >
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <div class="slider-container">
+            <div class="slider league-slider" id="league-slider">
+              <!-- League items will be populated by JavaScript -->
+            </div>
+          </div>
+          <button
+            class="slider-btn next-btn"
+            id="league-next"
+            aria-label="Next league"
+          >
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </div>
+      </section>
+
+      <!-- TEAM SECTION -->
+      <section id="team" class="team">
+        <div class="section-header">
+          <h2 class="section-title">Select Team</h2>
+        </div>
+        <div class="slider-wrapper">
+          <button
+            class="slider-btn prev-btn"
+            id="team-prev"
+            aria-label="Previous team"
+          >
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <div class="slider-container">
+            <div class="slider team-slider" id="team-slider">
+              <!-- Team items will be populated by JavaScript -->
+            </div>
+          </div>
+          <button
+            class="slider-btn next-btn"
+            id="team-next"
+            aria-label="Next team"
+          >
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="cta-container" id="cta-container" style="display: none">
+          <a href="html/home.html" class="cta-button">
+            Go to Home Page
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
+        </div>
+      </section>
     </main>
 
     <!-- to use ion icon pack https://ionic.io/ionicons -->
@@ -114,5 +175,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
