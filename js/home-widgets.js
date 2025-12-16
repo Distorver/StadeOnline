@@ -1,13 +1,21 @@
-const apiKey = 'PASTE YOUR API';
+const apiKey = '44e9ee7d636e432a840e605a61455669';
 
-// Retrieve stored league and team
-let selectedLeague = JSON.parse(localStorage.getItem('selectedLeague'));
-let selectedTeam = JSON.parse(localStorage.getItem('selectedTeam'));
+// fresh selections read at init
+let selectedLeague = null;
+let selectedTeam = null;
 
-// Initialize widgets on page load
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
+  try {
+    selectedLeague = JSON.parse(localStorage.getItem('selectedLeague'));
+    selectedTeam = JSON.parse(localStorage.getItem('selectedTeam'));
+  } catch (e) {
+    console.warn('home-widgets: localStorage parse error', e);
+  }
+
+  console.log('home-widgets init', { selectedLeague, selectedTeam });
+
   if (!selectedLeague || !selectedTeam) {
     showNoDataMessage();
     return;
@@ -25,14 +33,19 @@ async function loadLeagueTable() {
   container.innerHTML = '<div class="loading">Loading table...</div>';
 
   try {
-    const response = await fetch(
-      `https://v3.football.api-sports.io/standings?league=${selectedLeague.id}&season=2024`,
-      {
-        headers: { 'x-apisports-key': apiKey },
-      }
+    const resp = await fetch(
+      `https://v3.football.api-sports.io/standings?league=${selectedLeague.id}&season=2023`,
+      { headers: { 'x-apisports-key': apiKey } }
     );
 
-    const data = await response.json();
+    if (!resp.ok) {
+      const txt = await resp.text();
+      console.error('Standings API error', resp.status, txt);
+      container.innerHTML = `<div class="error">Standings API error: ${resp.status}</div>`;
+      return;
+    }
+
+    const data = await resp.json();
     const standings = data.response?.[0]?.league?.standings?.[0] || [];
 
     if (!standings.length) {
@@ -42,10 +55,10 @@ async function loadLeagueTable() {
     }
 
     let html = `
-      <div class="widget-header">
+      <div class="widget-header schabo">
         <h3>${selectedLeague.name} - ${selectedLeague.country}</h3>
       </div>
-      <table class="table">
+      <table class="table schabo">
         <thead>
           <tr>
             <th>Position</th>
@@ -105,14 +118,19 @@ async function loadTeamMatches() {
   container.innerHTML = '<div class="loading">Loading matches...</div>';
 
   try {
-    const response = await fetch(
-      `https://v3.football.api-sports.io/fixtures?team=${selectedTeam.id}&season=2024&last=10`,
-      {
-        headers: { 'x-apisports-key': apiKey },
-      }
+    const resp = await fetch(
+      `https://v3.football.api-sports.io/fixtures?team=${selectedTeam.id}&season=2023&last=10`,
+      { headers: { 'x-apisports-key': apiKey } }
     );
 
-    const data = await response.json();
+    if (!resp.ok) {
+      const txt = await resp.text();
+      console.error('Matches API error', resp.status, txt);
+      container.innerHTML = `<div class="error">Matches API error: ${resp.status}</div>`;
+      return;
+    }
+
+    const data = await resp.json();
     const matches = data.response || [];
 
     if (!matches.length) {
@@ -188,14 +206,19 @@ async function loadLastMatch() {
   container.innerHTML = '<div class="loading">Loading last match...</div>';
 
   try {
-    const response = await fetch(
-      `https://v3.football.api-sports.io/fixtures?team=${selectedTeam.id}&season=2024&last=1&status=FT`,
-      {
-        headers: { 'x-apisports-key': apiKey },
-      }
+    const resp = await fetch(
+      `https://v3.football.api-sports.io/fixtures?team=${selectedTeam.id}&season=2023&last=1&status=FT`,
+      { headers: { 'x-apisports-key': apiKey } }
     );
 
-    const data = await response.json();
+    if (!resp.ok) {
+      const txt = await resp.text();
+      console.error('Last match API error', resp.status, txt);
+      container.innerHTML = `<div class="error">Last match API error: ${resp.status}</div>`;
+      return;
+    }
+
+    const data = await resp.json();
     const match = data.response?.[0];
 
     if (!match) {

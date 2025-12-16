@@ -7,7 +7,7 @@
 /* 3-column container */
 .cards-container {
   display: grid;
-  grid-template-columns: 2fr 2fr 3fr;
+  grid-template-columns: 3fr 2fr 2fr;
   gap: 2rem;
 }
 
@@ -117,14 +117,14 @@
   color: #00cf78;
   font-weight: 600;
   border-bottom: 2px solid #00cf78;
-  font-size: 0.95rem;
+  font-size: 1.3rem;
 }
 
 .table td {
   padding: 1rem;
   border-bottom: 1px solid rgba(0, 207, 120, 0.2);
   color: #ceeec6;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
 }
 
 .table tr:hover {
@@ -138,8 +138,8 @@
 }
 
 .team-logo {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  /* height: 28px; */
   object-fit: contain;
 }
 

@@ -1,5 +1,5 @@
 // API Configuration
-const apiKey = 'PASTE YOUR API';
+const apiKey = '44e9ee7d636e432a840e605a61455669';
 
 // Slider state
 let leagueCenter = 0;
@@ -113,7 +113,8 @@ async function loadTeams(leagueId) {
   }
 }
 
-function centerTeam(index, teams) {
+function centerTeam(index, teams = teamsData) {
+  if (!teams || !teams.length) return;
   teamCenter = Math.max(0, Math.min(teams.length - 1, index));
   const track = document.getElementById('team-slider');
   if (!track) return;
@@ -160,12 +161,12 @@ function setupButtons() {
   document.getElementById('team-prev')?.addEventListener('click', () => {
     const track = document.getElementById('team-slider');
     const count = track?.children.length || 0;
-    if (count) centerTeam(teamCenter - 1, Array(count));
+    if (count) centerTeam(teamCenter - 1, teamsData);
   });
   document.getElementById('team-next')?.addEventListener('click', () => {
     const track = document.getElementById('team-slider');
     const count = track?.children.length || 0;
-    if (count) centerTeam(teamCenter + 1, Array(count));
+    if (count) centerTeam(teamCenter + 1, teamsData);
   });
 }
 

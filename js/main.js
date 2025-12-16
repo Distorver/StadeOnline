@@ -3,11 +3,13 @@ const leagues = [
     id: 39,
     name: 'Premier League',
     logo: 'https://media.api-sports.io/football/leagues/39.png',
+    country: 'England',
   },
   {
     id: 140,
     name: 'La Liga',
     logo: 'https://media.api-sports.io/football/leagues/140.png',
+    country: 'Spain',
   },
   {
     id: 135,
