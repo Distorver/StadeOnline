@@ -34,8 +34,19 @@
     <main class="main-content">
       <div class="cards-container">
         <div class="card table-card">
-          <h2 class="title schabo scroll-box">League Table</h2>
-          <!-- Table content here -->
+          <div class="league-selector-container schabo">
+            <div class="select">
+              <select id="league-select" class="schabo league-select">
+                <option value="">Choose a League</option>
+              </select>
+            </div>
+            <h2 class="title schabo scroll-box">Table</h2>
+          </div>
+          <div id="table-content" class="table-content">
+            <div class="no-data schabo">
+              Please select a league to view standings
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -56,5 +67,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/table-page.js"></script>
   </body>
 </html>

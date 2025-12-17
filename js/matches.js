@@ -1,4 +1,4 @@
-const apiKey = '019664b3216fe34029ced63ce24f6ecb';
+const apiKey = 'd93098b09ac4e7158126a6922d7bea18';
 const today = new Date().toISOString().split('T')[0];
 
 fetch(`https://v3.football.api-sports.io/fixtures?date=${today}`, {

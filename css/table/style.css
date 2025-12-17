@@ -22,7 +22,8 @@
 
 .title {
   color: #ceeec6;
-  text-align: center;
+  text-align: start;
+  transform: translateX(-8%);
   font-size: 3rem;
 }
 
@@ -68,4 +69,69 @@
 
 .scroll-box::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
+}
+
+/* League Selector Styling */
+.league-selector-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.select {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.league-label {
+  color: #00cf78;
+  font-size: 2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.league-select {
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  background-color: #ceeec6;
+  color: #00554b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.league-select:hover {
+  background-color: #00664f;
+  color: #ceeec6;
+}
+
+.league-select:focus {
+  outline: none;
+}
+
+.league-select option {
+  background-color: #00554b;
+  color: #ceeec6;
+  font-size: 1.1rem;
+}
+
+.table-content {
+  margin-top: 1rem;
+}
+
+.loading,
+.no-data,
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #ceeec6;
+  font-size: 1.6rem;
+}
+
+.error {
+  color: #ff6b6b;
 }

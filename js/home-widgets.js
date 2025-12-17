@@ -1,4 +1,4 @@
-const apiKey = '019664b3216fe34029ced63ce24f6ecb';
+const apiKey = 'd93098b09ac4e7158126a6922d7bea18';
 
 // fresh selections read at init
 let selectedLeague = null;
@@ -72,10 +72,10 @@ async function loadLeagueTable() {
 
     standings.forEach((item, index) => {
       const team = item.team;
-      const isChampion = index === 0;
+      const isSelectedTeam = team.id === selectedTeam.id;
       const isRelegated = index >= standings.length - 3;
-      const rowClass = isChampion
-        ? 'highlight-champ'
+      const rowClass = isSelectedTeam
+        ? 'highlight-selected'
         : isRelegated
         ? 'highlight-relegated'
         : '';

@@ -53,6 +53,11 @@
   border-left: 4px solid #00cf78;
 }
 
+.table tr.highlight-selected {
+  background-color: rgba(100, 200, 255, 0.15);
+  border-left: 4px solid #64c8ff;
+}
+
 .table tr.highlight-relegated {
   background-color: rgba(255, 107, 107, 0.1);
   border-left: 4px solid #ff6b6b;

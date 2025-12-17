@@ -1,5 +1,5 @@
 // API Configuration
-const apiKey = '019664b3216fe34029ced63ce24f6ecb';
+const apiKey = 'd93098b09ac4e7158126a6922d7bea18';
 
 // Slider state
 let leagueCenter = 0;
