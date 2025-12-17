@@ -123,3 +123,13 @@ body {
   justify-content: center;
   font-size: 2rem;
 }
+
+.scroll-box {
+  overflow: auto;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-box::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}

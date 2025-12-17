@@ -1,0 +1,110 @@
+/* --- MAIN CONTENT LAYOUT --- */
+.main-content {
+  margin: 4rem 6rem; /* Center content */
+  height: 80vh;
+}
+
+/* 3-column container */
+.cards-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  gap: 2rem;
+}
+
+/* Base style for cards */
+.card {
+  height: 75vh; /* Tall size */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  background-color: #00554b; /* Black background */
+  padding: 1rem;
+  overflow: scroll;
+}
+
+.title {
+  color: #ceeec6;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.footer {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  padding: 2rem 5rem;
+  background-color: #00cf78;
+  color: #00554b;
+}
+
+.footer-ask {
+  color: #ceeec6;
+}
+
+.copy {
+  font-weight: 400;
+  font-size: 1.7rem;
+  align-self: center;
+}
+
+.change {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #00554b;
+  transition: 0.5s all;
+}
+
+.home-link:hover {
+  color: #ceeec6;
+}
+
+/* --- WIDGET STYLING --- */
+
+.widget-header {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #00cf78;
+  margin-bottom: 1.5rem;
+}
+
+.widget-header h3 {
+  margin: 0;
+  color: #00cf78;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Loading and error states */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #ceeec6;
+  font-size: 1.1rem;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #ff6b6b;
+  font-size: 1.1rem;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #8a9e9e;
+  font-size: 1.1rem;
+}
+
+.scroll-box {
+  overflow: auto;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-box::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}

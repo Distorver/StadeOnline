@@ -1,0 +1,48 @@
+.assists-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.assists-header {
+  color: #ceeec6;
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 4fr 4fr;
+  align-items: center;
+  gap: 1.7rem;
+  text-align: start;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.assist-row {
+  color: hsl(173, 100%, 17%);
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 4fr 4fr;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: start;
+  background-color: #ceeec6;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  font-size: 1.3rem;
+}
+
+.rank {
+  font-size: 2rem;
+}
+
+.player-info {
+  text-align: center;
+}
+
+.player-photo {
+  border-radius: 50%;
+  width: 4rem;
+}
+
+.assists-count {
+  text-align: center;
+}

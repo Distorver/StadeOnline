@@ -1,4 +1,4 @@
-const apiKey = '44e9ee7d636e432a840e605a61455669';
+const apiKey = '019664b3216fe34029ced63ce24f6ecb';
 
 // fresh selections read at init
 let selectedLeague = null;
@@ -55,9 +55,6 @@ async function loadLeagueTable() {
     }
 
     let html = `
-      <div class="widget-header schabo">
-        <h3>${selectedLeague.name} - ${selectedLeague.country}</h3>
-      </div>
       <table class="table schabo">
         <thead>
           <tr>
@@ -115,75 +112,58 @@ async function loadTeamMatches() {
   const container = document.getElementById('matches-schedule-container');
   if (!container) return;
 
-  container.innerHTML = '<div class="loading">Loading matches...</div>';
+  container.innerHTML =
+    '<div class="loading">Loading latest week matches...</div>';
 
   try {
     const resp = await fetch(
-      `https://v3.football.api-sports.io/fixtures?team=${selectedTeam.id}&season=2023&last=10`,
+      `https://v3.football.api-sports.io/players/topassists?league=${selectedLeague.id}&season=2023`,
       { headers: { 'x-apisports-key': apiKey } }
     );
 
     if (!resp.ok) {
       const txt = await resp.text();
-      console.error('Matches API error', resp.status, txt);
-      container.innerHTML = `<div class="error">Matches API error: ${resp.status}</div>`;
+      console.error('Top assists API error', resp.status, txt);
+      container.innerHTML = `<div class="error">Top assists API error: ${resp.status}</div>`;
       return;
     }
 
     const data = await resp.json();
-    const matches = data.response || [];
+    const assists = data.response || [];
 
-    if (!matches.length) {
-      container.innerHTML = '<div class="no-data">No recent matches</div>';
+    if (!assists.length) {
+      container.innerHTML =
+        '<div class="no-data">No assists data available</div>';
       return;
     }
 
     let html = `
-      <div class="widget-header">
-        <h3>${selectedTeam.name} - Recent Matches</h3>
-      </div>
-      <div class="matches-list">
+      <div class="assists-list schabo">
+        <div class="assists-header">
+          <span class="ranks">Rank</span>
+          <span class="player">Player</span>
+          <span class="name">name</span>
+          <span class="team">Team</span>
+          <span class="assists">Assists</span>
+        </div>
     `;
 
-    matches.forEach((match) => {
-      const isHome = match.teams.home.id === selectedTeam.id;
-      const opponent = isHome ? match.teams.away : match.teams.home;
-      const score = match.goals;
-      const teamScore = isHome ? score.home : score.away;
-      const opponentScore = isHome ? score.away : score.home;
-      const matchDate = new Date(match.fixture.date);
-      const dateStr = matchDate.toLocaleDateString('en-GB', {
-        month: 'short',
-        day: 'numeric',
-      });
-
-      const status = match.fixture.status.short;
-      const statusClass =
-        status === 'FT' ? 'finished' : status === 'PST' ? 'postponed' : '';
+    assists.slice(0, 10).forEach((item, index) => {
+      const player = item.player;
+      const team = item.statistics[0]?.team;
 
       html += `
-        <div class="match-card ${statusClass}">
-          <div class="match-date">${dateStr}</div>
-          <div class="match-content">
-            <div class="team home">
-              <img src="${match.teams.home.logo}" alt="${
-        match.teams.home.name
-      }" class="team-badge">
-              <span class="team-name">${match.teams.home.name}</span>
-            </div>
-            <div class="match-score">
-              <span class="score">${score.home ?? '-'}</span>
-              <span class="separator">-</span>
-              <span class="score">${score.away ?? '-'}</span>
-            </div>
-            <div class="team away">
-              <span class="team-name">${match.teams.away.name}</span>
-              <img src="${match.teams.away.logo}" alt="${
-        match.teams.away.name
-      }" class="team-badge">
-            </div>
-          </div>
-          <div class="match-status">${status}</div>
+        <div class="assist-row">
+          <span class="rank">${index + 1}</span>
+
+            <img src="${player.photo}" alt="${
+        player.name
+      }" class="player-photo" onerror="this.src='https://via.placeholder.com/40'">
+            <p class="player-name">${player.name}</p>
+          <p class="teams-name">${team?.name || 'N/A'}</p>
+          <p class="assists-count"><strong>${
+            item.statistics[0]?.assists || 0
+          }</strong></p>
         </div>
       `;
     });
@@ -194,8 +174,8 @@ async function loadTeamMatches() {
 
     container.innerHTML = html;
   } catch (error) {
-    console.error('Error loading matches:', error);
-    container.innerHTML = '<div class="error">Failed to load matches</div>';
+    console.error('Error loading top assists:', error);
+    container.innerHTML = '<div class="error">Failed to load top assists</div>';
   }
 }
 
@@ -203,119 +183,70 @@ async function loadLastMatch() {
   const container = document.getElementById('match-overview-container');
   if (!container) return;
 
-  container.innerHTML = '<div class="loading">Loading last match...</div>';
+  container.innerHTML = '<div class="loading">Loading top scorers...</div>';
 
   try {
     const resp = await fetch(
-      `https://v3.football.api-sports.io/fixtures?team=${selectedTeam.id}&season=2023&last=1&status=FT`,
+      `https://v3.football.api-sports.io/players/topscorers?league=${selectedLeague.id}&season=2023`,
       { headers: { 'x-apisports-key': apiKey } }
     );
 
     if (!resp.ok) {
       const txt = await resp.text();
-      console.error('Last match API error', resp.status, txt);
-      container.innerHTML = `<div class="error">Last match API error: ${resp.status}</div>`;
+      console.error('Top scorers API error', resp.status, txt);
+      container.innerHTML = `<div class="error">Top scorers API error: ${resp.status}</div>`;
       return;
     }
 
     const data = await resp.json();
-    const match = data.response?.[0];
+    const scorers = data.response || [];
 
-    if (!match) {
+    if (!scorers.length) {
       container.innerHTML =
-        '<div class="no-data">No completed matches yet</div>';
+        '<div class="no-data">No scorers data available</div>';
       return;
     }
 
-    const home = match.teams.home;
-    const away = match.teams.away;
-    const goals = match.goals;
-    const stats = match.statistics || [];
-
-    const homeStats = stats[0] || {};
-    const awayStats = stats[1] || {};
-
-    const matchDate = new Date(match.fixture.date);
-    const dateStr = matchDate.toLocaleDateString('en-GB', {
-      weekday: 'short',
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    });
-    const timeStr = matchDate.toLocaleTimeString('en-GB', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
     let html = `
-      <div class="widget-header">
-        <h3>Last Match - ${dateStr}</h3>
-      </div>
-      <div class="last-match-container">
-        <div class="match-header">
-          <div class="team-section">
-            <img src="${home.logo}" alt="${home.name}" class="team-badge">
-            <div class="team-info">
-              <h4>${home.name}</h4>
-            </div>
-          </div>
+      <div class="assists-list schabo">
+        <div class="assists-header">
+          <span class="ranks">Rank</span>
+          <span class="player">Player</span>
+          <span class="name">name</span>
+          <span class="team">Team</span>
+          <span class="assists">Goals</span>
+        </div>
+    `;
 
-          <div class="match-score-large">
-            <span class="score-number">${goals.home}</span>
-            <span class="score-separator">-</span>
-            <span class="score-number">${goals.away}</span>
-          </div>
+    scorers.slice(0, 10).forEach((item, index) => {
+      const player = item.player;
+      const team = item.statistics[0]?.team;
 
-          <div class="team-section away">
-            <div class="team-info">
-              <h4>${away.name}</h4>
-            </div>
-            <img src="${away.logo}" alt="${away.name}" class="team-badge">
-          </div>
+      html += `
+              <div class="assist-row">
+          <span class="rank">${index + 1}</span>
+
+            <img src="${player.photo}" alt="${
+        player.name
+      }" class="player-photo" onerror="this.src='https://via.placeholder.com/40'">
+            <span class="player-name">${player.name}</span>
+          <p class="teams-name">${team?.name || 'N/A'}</p>
+          <span class="goals-count"><strong>${
+            item.statistics[0]?.goals || 0
+          }</strong></span>
         </div>
 
-        <div class="match-details">
-          <div class="detail-item">
-            <span class="label">Date:</span>
-            <span class="value">${dateStr} at ${timeStr}</span>
-          </div>
-          <div class="detail-item">
-            <span class="label">Venue:</span>
-            <span class="value">${match.fixture.venue.name || 'N/A'}</span>
-          </div>
-        </div>
+      `;
+    });
 
-        <div class="match-stats">
-          <div class="stats-grid">
-            <div class="stat-row">
-              <div class="stat-home">${homeStats.shots?.total ?? 0}</div>
-              <div class="stat-label">Shots</div>
-              <div class="stat-away">${awayStats.shots?.total ?? 0}</div>
-            </div>
-            <div class="stat-row">
-              <div class="stat-home">${homeStats.shots?.on_goal ?? 0}</div>
-              <div class="stat-label">On Target</div>
-              <div class="stat-away">${awayStats.shots?.on_goal ?? 0}</div>
-            </div>
-            <div class="stat-row">
-              <div class="stat-home">${homeStats.passes?.total ?? 0}</div>
-              <div class="stat-label">Passes</div>
-              <div class="stat-away">${awayStats.passes?.total ?? 0}</div>
-            </div>
-            <div class="stat-row">
-              <div class="stat-home">${homeStats.possession ?? '0%'}</div>
-              <div class="stat-label">Possession</div>
-              <div class="stat-away">${awayStats.possession ?? '0%'}</div>
-            </div>
-          </div>
-        </div>
+    html += `
       </div>
     `;
 
     container.innerHTML = html;
   } catch (error) {
-    console.error('Error loading last match:', error);
-    container.innerHTML = '<div class="error">Failed to load last match</div>';
+    console.error('Error loading top scorers:', error);
+    container.innerHTML = '<div class="error">Failed to load top scorers</div>';
   }
 }
 

@@ -1,0 +1,59 @@
+/* --- LEAGUE TABLE STYLING --- */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  color: #00cf78;
+  font-weight: 600;
+  border-bottom: 2px solid #00cf78;
+  font-size: 1.3rem;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 207, 120, 0.2);
+  color: #ceeec6;
+  font-size: 1.5rem;
+}
+
+.table tr:hover {
+  background-color: rgba(0, 207, 120, 0.1);
+}
+
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.team-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.team-name {
+  color: #00cf78;
+  font-weight: 500;
+}
+
+.points {
+  color: #00cf78;
+  font-size: 1.1rem;
+}
+
+.table tr.highlight-champ {
+  background-color: rgba(0, 207, 120, 0.2);
+  border-left: 4px solid #00cf78;
+}
+
+.table tr.highlight-relegated {
+  background-color: rgba(255, 107, 107, 0.1);
+  border-left: 4px solid #ff6b6b;
+}

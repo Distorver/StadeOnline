@@ -6,8 +6,10 @@
     <title>Home | StadeOnline</title>
 
     <link rel="stylesheet" href="../css/public/font.css" />
-    <link rel="stylesheet" href="../css/home/style.css" />
     <link rel="stylesheet" href="../css/public/nav.css" />
+    <link rel="stylesheet" href="../css/home/main.css" />
+    <link rel="stylesheet" href="../css/home/goal.css" />
+    <link rel="stylesheet" href="../css/home/table.css" />
   </head>
   <body>
     <header class="navbar schabo">
@@ -30,22 +32,19 @@
 
     <main class="main-content">
       <div class="cards-container">
-        <div class="card table-card">
-          <div id="league-table-container">
-            <h2 class="title schabo">Table</h2>
-          </div>
+        <div class="card table-card scroll-box">
+          <h2 class="title schabo">Table</h2>
+          <div id="league-table-container"></div>
         </div>
 
-        <div class="card schedule-card">
-          <div id="matches-schedule-container">
-            <h2 class="title schabo">Matches</h2>
-          </div>
+        <div class="card schedule-card scroll-box">
+          <h2 class="title schabo">Top Assists</h2>
+          <div id="matches-schedule-container"></div>
         </div>
 
-        <div class="card overview-card">
-          <div id="match-overview-container">
-            <h2 class="title schabo">Last Match</h2>
-          </div>
+        <div class="card overview-card scroll-box">
+          <h2 class="title schabo">Top Scorers</h2>
+          <div id="match-overview-container"></div>
         </div>
       </div>
     </main>
