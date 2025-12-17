@@ -12,7 +12,8 @@ fetch(`https://v3.football.api-sports.io/fixtures?date=${today}`, {
     container.innerHTML = '';
 
     if (matches.length === 0) {
-      container.innerHTML = '<div class="no-matches">No Matches today</div>';
+      container.innerHTML =
+        '<div class="no-matches schabo">No Matches today</div>';
       return;
     }
 

@@ -50,7 +50,7 @@ async function loadLeagueTable() {
 
     if (!standings.length) {
       container.innerHTML =
-        '<div class="no-data">No standings data available</div>';
+        '<div class="no-data schabo">No standings data available</div>';
       return;
     }
 
@@ -133,7 +133,7 @@ async function loadTeamMatches() {
 
     if (!assists.length) {
       container.innerHTML =
-        '<div class="no-data">No assists data available</div>';
+        '<div class="no-data schabo">No assists data available</div>';
       return;
     }
 
@@ -203,7 +203,7 @@ async function loadLastMatch() {
 
     if (!scorers.length) {
       container.innerHTML =
-        '<div class="no-data">No scorers data available</div>';
+        '<div class="no-data schabo">No scorers data available</div>';
       return;
     }
 

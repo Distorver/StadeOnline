@@ -22,11 +22,22 @@ a:visited {
   font-size: 5rem;
   line-height: 0.9;
   margin-bottom: 4rem;
+  transition: 0.3s all;
 }
 
 .nav-logo span {
   text-shadow: 0 5px 10px #00554b;
   color: #00cf78;
+  transition: 0.3s all;
+}
+
+.nav-logo:hover {
+  color: #ceeec6;
+}
+
+.nav-logo:hover span {
+  color: #00554b;
+  text-shadow: none;
 }
 
 .nav-btn {
