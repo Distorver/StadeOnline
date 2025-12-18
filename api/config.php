@@ -2,7 +2,7 @@
 // API config - keep your API key here (server-side)
 define('API_BASE', 'https://v3.football.api-sports.io');
 // TODO: replace with your real API key and keep file outside VCS if possible
-define('API_KEY', '656327a0357ae4aa0ff4371dd5afd0d3');
+define('API_KEY', 'b5f3aee2cb880331522a13b11729ba63');
 
 function proxy_request($path) {
     $url = API_BASE . $path;

@@ -2,8 +2,8 @@ const today = new Date().toISOString().split('T')[0];
 
 // Define competition popularity order (most watched first)
 const competitionOrder = {
-  2: 1,
-  20: 2,
+  2: 1, // champions league
+  20: 2, // friendlies matches
   39: 3, // Premier League
   140: 4, // La Liga
   135: 5, // Serie A
