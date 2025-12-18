@@ -1,6 +1,3 @@
-// API Configuration
-const apiKey = '5890e514e018ea165baff8a5ca7f9bb9';
-
 // Slider state
 let leagueCenter = 0;
 let teamCenter = 0;
@@ -71,8 +68,7 @@ async function loadTeams(leagueId) {
 
   try {
     const response = await fetch(
-      `https://v3.football.api-sports.io/teams?league=${leagueId}&season=2023`,
-      { headers: { 'x-apisports-key': apiKey } }
+      `../api/teams.php?league=${leagueId}&season=2023`
     );
 
     const data = await response.json();

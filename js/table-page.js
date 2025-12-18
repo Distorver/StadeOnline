@@ -1,5 +1,3 @@
-const apiKey = '5890e514e018ea165baff8a5ca7f9bb9';
-
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
@@ -46,8 +44,7 @@ async function loadLeagueTablePage(leagueId) {
 
   try {
     const resp = await fetch(
-      `https://v3.football.api-sports.io/standings?league=${leagueId}&season=2023`,
-      { headers: { 'x-apisports-key': apiKey } }
+      `../api/standings.php?league=${leagueId}&season=2023`
     );
 
     if (!resp.ok) {

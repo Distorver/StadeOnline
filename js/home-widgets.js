@@ -1,4 +1,3 @@
-const apiKey = '5890e514e018ea165baff8a5ca7f9bb9';
 
 // fresh selections read at init
 let selectedLeague = null;
@@ -34,8 +33,7 @@ async function loadLeagueTable() {
 
   try {
     const resp = await fetch(
-      `https://v3.football.api-sports.io/standings?league=${selectedLeague.id}&season=2023`,
-      { headers: { 'x-apisports-key': apiKey } }
+      `../api/standings.php?league=${selectedLeague.id}&season=2023`
     );
 
     if (!resp.ok) {
@@ -117,8 +115,7 @@ async function loadTeamMatches() {
 
   try {
     const resp = await fetch(
-      `https://v3.football.api-sports.io/players/topassists?league=${selectedLeague.id}&season=2023`,
-      { headers: { 'x-apisports-key': apiKey } }
+      `../api/players_topassists.php?league=${selectedLeague.id}&season=2023`
     );
 
     if (!resp.ok) {
@@ -162,7 +159,7 @@ async function loadTeamMatches() {
             <p class="player-name">${player.name}</p>
           <p class="teams-name">${team?.name || 'N/A'}</p>
           <p class="assists-count"><strong>${
-            item.statistics[0]?.assists || 0
+            item.statistics[0]?.goals?.assists ?? 0
           }</strong></p>
         </div>
       `;
@@ -187,8 +184,7 @@ async function loadLastMatch() {
 
   try {
     const resp = await fetch(
-      `https://v3.football.api-sports.io/players/topscorers?league=${selectedLeague.id}&season=2023`,
-      { headers: { 'x-apisports-key': apiKey } }
+      `../api/players_topscorers.php?league=${selectedLeague.id}&season=2023`
     );
 
     if (!resp.ok) {
@@ -232,7 +228,7 @@ async function loadLastMatch() {
             <span class="player-name">${player.name}</span>
           <p class="teams-name">${team?.name || 'N/A'}</p>
           <span class="goals-count"><strong>${
-            item.statistics[0]?.goals || 0
+            item.statistics[0]?.goals?.total ?? 0
           }</strong></span>
         </div>
 

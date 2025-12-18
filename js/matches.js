@@ -1,25 +1,29 @@
-const apiKey = '5890e514e018ea165baff8a5ca7f9bb9';
 const today = new Date().toISOString().split('T')[0];
 
 // Define competition popularity order (most watched first)
 const competitionOrder = {
-  39: 1, // Premier League
-  140: 2, // La Liga
-  135: 3, // Serie A
-  78: 4, // Bundesliga
-  61: 5, // Ligue 1
-  233: 6, // Egyptian League
-  307: 7, // Saudi Pro League
+  2: 1,
+  20: 2,
+  39: 3, // Premier League
+  140: 4, // La Liga
+  135: 5, // Serie A
+  78: 6, // Bundesliga
+  61: 7, // Ligue 1
+  233: 8, // Egyptian League
+  307: 9, // Saudi Pro League
+  10: 10,
+  539: 11,
+  860: 12,
+  529: 13,
+  547: 14,
+  556: 15,
 };
 
 function getCompetitionRank(leagueId) {
   return competitionOrder[leagueId] || 999; // 999 for unknown leagues
 }
 
-fetch(`https://v3.football.api-sports.io/fixtures?date=${today}`, {
-  method: 'GET',
-  headers: { 'x-apisports-key': apiKey },
-})
+fetch(`../api/fixtures.php?date=${today}`, { method: 'GET' })
   .then((res) => res.json())
   .then((data) => {
     let matches = data.response;
