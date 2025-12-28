@@ -112,7 +112,6 @@ li {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Dim other nav links when hovering one */
 .nav-list {
   transition: opacity 0.2s ease;
 }
@@ -126,7 +125,6 @@ li {
   opacity: 1;
 }
 
-/* Keep logo and github CTA at full opacity */
 nav > .nav-logo,
 nav .github {
   opacity: 1 !important;

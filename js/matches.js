@@ -1,22 +1,22 @@
 const today = new Date().toISOString().split('T')[0];
 
-// Define competition popularity order (most watched first)
 const competitionOrder = {
-  2: 1, // champions league
-  20: 2, // friendlies matches
-  39: 3, // Premier League
-  140: 4, // La Liga
-  135: 5, // Serie A
-  78: 6, // Bundesliga
-  61: 7, // Ligue 1
-  233: 8, // Egyptian League
-  307: 9, // Saudi Pro League
-  10: 10,
-  539: 11,
-  860: 12,
-  529: 13,
-  547: 14,
-  556: 15,
+  2: 1, // Champions league
+  6: 2, // AFCON
+  20: 3, // CAF
+  39: 4, // Premier League
+  140: 5, // La Liga
+  135: 6, // Serie A
+  78: 7, // Bundesliga
+  61: 8, // Ligue 1
+  233: 9, // Egyptian League
+  307: 10, // Saudi Pro League
+  10: 11, // Friendlies matches
+  539: 12, // Egypt Super Cup
+  860: 13, // Arab Cup
+  529: 14, // Germany Super Cup
+  547: 15, // Italy Super Cup
+  556: 16, // Spain Super Cup
 };
 
 function getCompetitionRank(leagueId) {
@@ -36,7 +36,6 @@ fetch(`../api/fixtures.php?date=${today}`, { method: 'GET' })
       return;
     }
 
-    // Sort matches by competition popularity
     matches.sort((a, b) => {
       const rankA = getCompetitionRank(a.league.id);
       const rankB = getCompetitionRank(b.league.id);

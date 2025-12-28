@@ -1,5 +1,4 @@
 <?php
-// API config - keep your API key here (server-side)
 define('API_BASE', 'https://v3.football.api-sports.io');
 // TODO: replace with your real API key and keep file outside VCS if possible
 define('API_KEY', '');
