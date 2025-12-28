@@ -41,6 +41,9 @@ and view key football statistics through a clean and responsive interface.
 
 ## ⚙ Installation & Setup
 
+**Note:** you will need to make account on https://www.api-football.com/ 
+then after that implement your api on `api/config.php` 
+
 To run the project locally:
 1. Clone the repository:
 `git clone https://github.com/Distorver/StadeOnline.git`
