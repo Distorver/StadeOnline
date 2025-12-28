@@ -1,48 +1,73 @@
-# StadeOnline
+# ⚽ StadeOnline
 
-# TODO
+StadeOnline is a football statistics web application developed as a college project, 
+based on an idea provided by the course instructor.
 
-- [x] Welcome page
-  - [x] ~~Side Nav~~ __(Ali Ayman)__ 
-  - [x] ~~Intro~~ __(Ali Ayman)__ 
-  - [x] League __(Ali Ayman)__ 
-  - [x] Team __(Ali Ayman)__ 
-- [ ] Home Page
-  - [x] Nav Bar __(Ali Mohamed)__
-  - [x] Main Section __(Ali Mohamed)__
-    - [ ] Table Section __(Ali Mohamed "missing widget")__
-    - [ ] Matches Section __(Ali Mohamed "missing widget")__
-    - [ ] Game Section __(Ali Mohamed "missing widget")__
-- [ ] Matches Page __(Anas "missing widget and style")__
-- [ ] Table Page __(Yousef "On hold")__
+The application allows users to select their favorite football league and team 
+and view key football statistics through a clean and responsive interface.
 
-# Guide
 
-## 1- Welcome page
+## 🔗 Live Demo
+👉 https://stadeonline.infinityfree.me/
 
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlhjWLurizaDhrdGx5EdjMgvulc4F6km5LVg&s)
-Leave it to me.
 
-## 2- Home page
+## 📸 Screenshots
+![Welcome Page](screenshots/welcome.gif)
+![Home Page](screenshots/home.png)
+![Nav Animations](screenshots/nav.gif)
+![Matches Page](screenshots/matches.png)
+![Table Page](screenshots/table.png)
 
-we will just use this photos as refrence:
 
-![](https://share.sketchpad.app/25/b29-22cc-aaf6dd.png)
-[![2025-12-04-193706-hyprshot.png](https://i.postimg.cc/9Qf7yQNK/2025-12-04-193706-hyprshot.png)](https://postimg.cc/XpTqb4Wk)
+## ✨ Features
 
-### Don't mind:
+* Select favorite football league and team
+* Display league table with standings
+* Show top scorers and top assisters
+* View all matches scheduled for today
+* View league table for any selected league
+* Responsive and user-friendly UI
 
-- don't mind the font or the design.
-- don't mind the colors just add your own temporary.
 
-### Mind:
+## 🛠 Technologies Used
 
-- padding and margin take care where you position the elements.
+* HTML5
+* CSS3 (Flexbox, Grid, Advanced CSS)
+* JavaScript (ES6+)
+* PHP
+* REST APIs
+* Git & GitHub
 
-## 3- Matches and Table Page
 
-just add the widgets of each page.
+## ⚙ Installation & Setup
 
-# After
+To run the project locally:
+1. Clone the repository:
+`git clone https://github.com/Distorver/StadeOnline.git`
+2. Move the project to your local server directory:
+* XAMPP: htdocs
+* WAMP: www
+* Linux (Apache): /var/www/html
+3. Start Apache (and MySQL if needed)
+4. Open your browser and go to:
+`http://localhost/StadeOnline`
 
-we will just need to add the widgets using php and the project is done
+
+## 🎓 Project Context
+
+This project was developed as part of a college course.
+The original idea was provided by the course instructor and implemented independently.
+
+
+## 🚀 Future Improvements
+
+* Migrate front-end to React
+* Improve UI/UX
+* Add user authentication
+* Add more detailed statistics
+* Optimize performance
+
+
+## 📬 Contact
+
+* LinkedIn: www.linkedin.com/in/3li-ayman
