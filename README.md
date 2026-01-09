@@ -1,4 +1,4 @@
-# ⚽ StadeOnline
+# StadeOnline
 
 StadeOnline is a football statistics web application developed as a college project, 
 based on an idea provided by the course instructor.
@@ -12,9 +12,9 @@ and view key football statistics through a clean and responsive interface.
 
 
 ## 📸 Screenshots
+![Nav Animations](screenshots/nav.gif)
 ![Welcome Page](screenshots/welcome.gif)
 ![Home Page](screenshots/home.png)
-![Nav Animations](screenshots/nav.gif)
 ![Matches Page](screenshots/matches.png)
 ![Table Page](screenshots/table.png)
 
